@@ -19,17 +19,14 @@ public class SuperIterator implements Iterator {
 
     public boolean hasNext() {
 
-        return (i< (iters.size()-1));
+        return (i< iters.size());
     }
 
     public List<Integer> next() {
 
         while(hasNext()){
-
-            for (int j=0; j<iteratorList.size(); j++){
-
-                list.addAll((List<Integer>)iteratorList.get(j).next());
-            }
+            
+            list.addAll((List<Integer>)iteratorList.get(i).next());
             i++;
         }
         Collections.sort(list);
